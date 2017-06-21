@@ -1,0 +1,422 @@
+@charset "utf-8";
+
+html {
+    color: #000;
+    background: #fff;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+html * {
+    outline:none;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+html, body {
+    font-family:'Microsoft YaHei', Helvetica, STHeiTi, sans-seri
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+input, select, textarea {
+    font-size: 100%;
+}
+
+/* 去掉各 Table  cell 的边距并让其边重合 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 去除默认边框 */
+fieldset, img {
+    border: 0;
+}
+img{
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+/* 一致的 del 样式 */
+del {
+    text-decoration: line-through;
+}
+
+address, caption, cite, code, dfn, em, th, var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* 去掉列表前的标识, li 会继承 */
+ol, ul {
+    list-style: none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {
+    text-align: left;
+}
+
+/* 来自 yahoo, 让标题都自定义, 适应多个系统应用 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+/* 统一上标和下标 */
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* 正常链接 未访问 */
+a:link {
+  text-decoration: none;
+}
+
+/* 鼠标悬停 */
+a:hover {
+    text-decoration: none;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+  color: #333;
+text-decoration: none;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+ *{
+    box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box; /* Safari */
+  }
+
+#app{
+  height: 100%;
+  min-height: 100%;
+  min-height: calc(100vh);
+  margin: 0 auto;
+}
+.v{
+  height: 100%;
+  min-height: 100%;
+  min-height: calc(100vh);
+  background: #ebebeb;
+}
+
+.wrap{
+  position:relative;
+  height: 100%;
+  min-height: 100%;
+  min-height: calc(100vh);
+  background:  #26252a;/*//主色调*/
+}
+.change-page .v{
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  min-height: calc(100vh);
+  overflow: hidden;
+}
+.change-page{
+   overflow-y:hidden;
+}
+
+.v-flexbox{
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+}
+
+.v-flexbox .v-flexbox-item{
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  -o-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-width: 20px;
+}
+.nowrap{
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.nowrap-flex{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    -webkit-box-flex: 1;
+    height: inherit;
+}
+.nowrap-multi{
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+
+/*场景切换*/
+.top-enter {
+    z-index: 1002;
+    -webkit-animation: pageFromTopCenter 400ms forwards;
+    animation: pageFromTopCenter 400ms forward
+}
+.top-leave {
+    z-index: 1001;
+    -webkit-animation: pageFromBottomCenter 400ms forwards;
+    animation: pageFromBottomCenter 400ms forwards
+}
+
+@-webkit-keyframes pageFromTopCenter {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    opacity: .9;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes pageFromTopCenter {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    opacity: .9;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes pageFromBottomCenter {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes pageFromBottomCenter {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.5;
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+}
+
+
+
+/*场景切换*/
+.next-enter {
+    z-index: 1002;
+    -webkit-animation: pageFromRightToCenter 500ms forwards;
+    animation: pageFromRightToCenter 500ms forward
+}
+.next-leave {
+    z-index: 1001;
+    -webkit-animation: pageFromCenterToLeft 500ms forwards;
+    animation: pageFromCenterToLeft 500ms forwards
+}
+.prev-enter {
+    z-index: 1001;
+    -webkit-animation: pageFromLeftToCenter 500ms forwards;
+    animation: pageFromLeftToCenter 500ms forward
+}
+.prev-leave {
+    z-index: 1002;
+    -webkit-animation: pageFromCenterToRight 500ms forwards;
+    animation: pageFromCenterToRight 500ms forwards;
+}
+
+@-webkit-keyframes pageFromRightToCenter {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    opacity: .9;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes pageFromRightToCenter {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    opacity: .9;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes pageFromCenterToRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    opacity: .9;
+  }
+}
+@keyframes pageFromCenterToRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    opacity: .9;
+  }
+}
+.page-from-center-to-left {
+  -webkit-animation: pageFromCenterToLeft 500ms forwards;
+          animation: pageFromCenterToLeft 500ms forwards;
+}
+.page-from-left-to-center  {
+  -webkit-animation: pageFromLeftToCenter 500ms forwards;
+          animation: pageFromLeftToCenter 500ms forwards;
+}
+@-webkit-keyframes pageFromCenterToLeft {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.5;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes pageFromCenterToLeft {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.5;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+@-webkit-keyframes pageFromLeftToCenter {
+  from {
+    opacity: .5;
+    -webkit-transform: translate3d(-20%, 0, 0);
+            transform: translate3d(-20%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes pageFromLeftToCenter {
+  from {
+    opacity: .5;
+    -webkit-transform: translate3d(-20%, 0, 0);
+            transform: translate3d(-20%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+/*设置1px边框*/
+.border1px {
+	position: relative;
+	z-index: 1;
+}
+
+.border1px:after {
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	content: "";
+	-webkit-transform: scale(0.5);
+	-webkit-transform-origin: 0 0;
+	transform: scale(0.5);
+	transform-origin: 0 0;
+}
+
+.settopborder:after {
+	border-top: 1px solid #A6A8AF;
+}
+.setrightborder:after {
+	border-right: 1px solid #A6A8AF;
+}
+.setbottomborder:after {
+	border-bottom: 1px solid #A6A8AF;
+}
+.setleftborder:after {
+	border-left: 1px solid #A6A8AF;
+}
+.setarrborder:after {
+	border: 1px solid #A6A8AF;
+  }
+ 

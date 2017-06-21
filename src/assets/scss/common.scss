@@ -1,0 +1,172 @@
+  @charset "utf-8";
+
+  @import "style.scss";
+
+  
+ .mint-header{
+      background:$color-black;
+       z-index: 100;
+       height: px2rem(60);
+       h1{
+        font-size: 22px;
+       }
+    
+  }
+  .mint-indicator-mask{
+    opacity: 0.8;
+     background-color:hsla(0%,0%,0%,0.8); 
+    z-index: 1000;
+  }
+  //个人中心
+
+  .mint-cell-allow-right::after{
+    width: px2rem(13);
+    height: px2rem(13);
+  }
+  .mint-header.is-fixed {
+    bottom:0;
+    top: auto;
+  }
+  .mint-button--normal,.mint-button--undefined{
+   	background:$color-red;
+      color: $color-white;
+   }
+   .mint-indicator-wrapper{
+    
+    z-index: 10000;
+   }
+   .mint-indicator-text{
+    @include font-dpr(14px);
+   }
+   .mint-spinner-snake{
+    width: px2rem(50)!important;
+    height: px2rem(50)!important;
+   }
+   //个人中心使用、、
+    .mint-cell-wrapper{
+       @include font-dpr(12px);
+          height: px2rem(50);
+
+    }
+  .mint-toast-text{
+     @include font-dpr(16px);
+     letter-spacing: px2rem(2);
+  }    
+  .msgbox{
+      width: px2rem(300);
+      background-color: $color-deepblue;
+      padding: px2rem(15);
+      border:1px solid white;
+      .msgbox-title{
+        color:#ffffff;
+         letter-spacing: px2rem(1);
+          @include font-dpr(10px);
+      }
+      .msgbox-message{
+      text-align: left;
+      letter-spacing: px2rem(1);
+       color:#ffffff;
+        @include font-dpr(10px);
+    }
+    .msgbox-btn{
+      background-color: $color-orange;
+      margin-right: px2rem(10);
+       @include font-dpr(12px);
+       color:#000;
+    }
+}         
+   .organbg{
+    background: #F96830;
+   }
+    .fa-star{
+    color: #4E4E4E;
+     @include font-dpr(10px);
+
+   }
+    .fa-circle{
+         margin-right: px2rem(10);
+    }
+   .fa-circle-organbg{
+   color: #ECC326;
+   @include font-dpr(12px);
+
+   }
+   .fontcolor{
+    color: #ECC326;
+      @include font-dpr(10px);
+   }
+ .orangecolor{
+    color: #ECC326;
+      @include font-dpr(14px);
+   }
+
+   .bluebg{
+      background: #8A49E8;
+   }
+   .redbg{
+     background: #FF2366;
+   }
+   .zs-border-left{
+     text-indent: px2rem(10);
+    border-left:px2rem(5) solid $color-orange;
+   }
+    //isscroll滚动           
+     #scroller,#scroller1 {
+                  position: absolute;
+                  z-index: 1;
+                  -webkit-tap-highlight-color: rgba(0,0,0,0);
+                  width: 100%;
+
+                  -webkit-transform: translateZ(0);
+                  -moz-transform: translateZ(0);
+                  -ms-transform: translateZ(0);
+                  -o-transform: translateZ(0);
+                  transform: translateZ(0);
+                  -webkit-touch-callout: none;
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  -ms-user-select: none;
+                  user-select: none;
+                  -webkit-text-size-adjust: none;
+                  -moz-text-size-adjust: none;
+                  -ms-text-size-adjust: none;
+                  -o-text-size-adjust: none;
+                  text-size-adjust: none;
+                  background: #fff;
+                  -webkit-transform:translate3d(0,0,0)
+                }    
+    //百叶窗
+              .swiper-container {
+                              width: 100%;
+                              height: px2rem(200);
+                              // height: 100%;
+                          }
+                          .swiper-slide {
+                              text-align: center;
+                              font-size: 18px;
+                              background: #fff;
+                              // width: 33.33%;
+                              
+                              /* Center slide text vertically */
+                              display: -webkit-box;
+                              display: -ms-flexbox;
+                              display: -webkit-flex;
+                              display: flex;
+                              -webkit-box-pack: center;
+                              -ms-flex-pack: center;
+                              -webkit-justify-content: center;
+                              justify-content: center;
+                              -webkit-box-align: center;
+                              -ms-flex-align: center;
+                              -webkit-align-items: center;
+                              align-items: center;
+                 }
+                         
+                         
+
+               
+               
+
+
+
+
